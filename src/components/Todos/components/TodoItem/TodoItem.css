@@ -1,0 +1,19 @@
+.todo-item {
+  display: flex;
+  gap: 1rem;
+  /* border: 1px solid var(--border-color); */
+  border-radius: 0.2rem;
+  padding: 0.5rem 1.4rem;
+  min-height: 3rem;
+  height: 3rem;
+  background-color: var(--primary-color);
+}
+
+.todo-remove {
+  margin-left: auto;
+}
+
+.todo-remove:disabled {
+  margin-left: auto;
+  visibility: hidden;
+}

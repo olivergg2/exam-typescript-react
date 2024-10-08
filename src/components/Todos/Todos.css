@@ -1,0 +1,16 @@
+#todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  background-color: var(--secondary-color);
+
+  max-width: 100%;
+  width: 28rem;
+
+  min-height: 18rem;
+  max-height: 100%;
+
+  overflow: auto;
+}

@@ -1,12 +1,8 @@
 import './App.css'
+import Todos from './components/Todos/Todos'
 
 function App() {
-  return (
-    <>
-      <p>Hello, World!</p>
-      <button>click me</button>
-    </>
-  )
+  return <Todos />
 }
 
 export default App
