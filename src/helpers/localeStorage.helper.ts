@@ -1,4 +1,6 @@
-export function getFromLocalStorage<T>(withKey: string): T | null {
+import { Nullable } from '../types'
+
+export function getFromLocalStorage<T>(withKey: string): Nullable<T> {
   const stored = localStorage.getItem(withKey)
 
   if (!stored) return null
