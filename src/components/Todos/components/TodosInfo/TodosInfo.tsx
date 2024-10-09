@@ -10,12 +10,15 @@ export default function TodosInfo() {
 
   const hasAddedTodos = todos.length > 0
 
+  const noTodos = 'Inga todos ännu, lägg till en!'
+  const infoString = `Totalt ${totalTodos} todos, ${completedTodos} klara, ${incompleteTodos} att göra`
+
   return (
     <footer id="todos-info">
-      {!hasAddedTodos && <h3>Inga todos ännu, lägg till en!</h3>}
-      {hasAddedTodos && (
-        <p>{`Totalt ${totalTodos} todos, ${completedTodos} klara, ${incompleteTodos} att göra`}</p>
-      )}
+      <p>
+        {!hasAddedTodos && noTodos}
+        {hasAddedTodos && infoString}
+      </p>
     </footer>
   )
 }
