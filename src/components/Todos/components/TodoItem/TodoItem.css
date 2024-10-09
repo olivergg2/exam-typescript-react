@@ -10,6 +10,11 @@
   background-color: var(--primary-color);
 }
 
+.todo-item[data-done='true'] > .todo-item-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .todo-remove {
   margin-left: auto;
 }

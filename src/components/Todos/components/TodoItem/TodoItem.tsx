@@ -13,9 +13,9 @@ export default function TodoItem({ todo }: TodoItemProps) {
   const isRemoveAllowed = isChecked
 
   return (
-    <li className="todo-item">
+    <li className="todo-item" data-done={isChecked}>
       <input type="checkbox" checked={isChecked} onChange={toggle} />
-      <h3>{todo.title}</h3>
+      <p className="todo-item-text">{todo.title}</p>
       <button disabled={!isRemoveAllowed} className="todo-remove" onClick={remove}>
         X
       </button>
