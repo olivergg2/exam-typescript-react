@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* border: 1px solid var(--border-color); */
   border-radius: 0.2rem;
   padding: 0.5rem 1.4rem;
   min-height: 3rem;
@@ -15,11 +14,15 @@
   opacity: 0.5;
 }
 
+.todo-item-text {
+  overflow: hidden;
+}
+
 .todo-remove {
   margin-left: auto;
+  padding-right: 0;
 }
 
 .todo-remove:disabled {
-  margin-left: auto;
   visibility: hidden;
 }

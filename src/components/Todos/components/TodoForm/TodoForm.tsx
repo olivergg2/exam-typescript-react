@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import useTodos from '../../../../hooks/useTodos.hook'
 import './TodoForm.css'
+import Button from '../../../Button/Button'
+import { TextInput } from '../../../Input/Input'
 
 export default function TodoForm() {
   const { addTodo } = useTodos()
@@ -25,8 +27,13 @@ export default function TodoForm() {
 
   return (
     <form id="todo-form" onSubmit={handleSubmit}>
-      <input placeholder="En super viktig todo..." value={title} onInput={handleInput} />
-      <button disabled={!isAddAllowed}>Lägg till</button>
+      <TextInput
+        id="todo-title"
+        placeholder="En super viktig todo..."
+        value={title}
+        onInput={handleInput}
+      />
+      <Button bold id="todo-add" title="Lägg till" disabled={!isAddAllowed} />
     </form>
   )
 }

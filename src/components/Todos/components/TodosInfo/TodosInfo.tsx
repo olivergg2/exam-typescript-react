@@ -1,5 +1,6 @@
 import useTodos from '../../../../hooks/useTodos.hook'
 import './TodosInfo.css'
+import Text from '../../../Text/Text'
 
 export default function TodosInfo() {
   const { todos } = useTodos()
@@ -13,12 +14,11 @@ export default function TodosInfo() {
   const noTodos = 'Inga todos ännu, lägg till en!'
   const infoString = `Totalt ${totalTodos} todos, ${completedTodos} klara, ${incompleteTodos} att göra`
 
+  const displayedText = hasAddedTodos ? infoString : noTodos
+
   return (
     <footer id="todos-info">
-      <p>
-        {!hasAddedTodos && noTodos}
-        {hasAddedTodos && infoString}
-      </p>
+      <Text>{displayedText}</Text>
     </footer>
   )
 }

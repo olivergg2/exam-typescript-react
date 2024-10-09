@@ -1,0 +1,25 @@
+.button {
+  background-color: var(--theme-color);
+  border-radius: 0.2rem;
+  padding: 0.8rem 1.2rem;
+
+  transition: opacity 0.2s ease-in-out;
+}
+
+.button.bold {
+  font-weight: 600;
+}
+
+.button:not(:disabled) {
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.4;
+}
+
+/* FLAT BUTTON */
+.button.flat {
+  background-color: transparent;
+  border: none;
+}

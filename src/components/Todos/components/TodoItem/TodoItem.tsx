@@ -1,5 +1,8 @@
 import { useTodo } from '../../../../hooks/useTodos.hook'
 import { Todo } from '../../../../types'
+import { FlatButton } from '../../../Button/Button'
+import { Checkbox } from '../../../Input/Input'
+import Text from '../../../Text/Text'
 import './TodoItem.css'
 
 interface TodoItemProps {
@@ -14,11 +17,9 @@ export default function TodoItem({ todo }: TodoItemProps) {
 
   return (
     <li className="todo-item" data-done={isChecked}>
-      <input type="checkbox" checked={isChecked} onChange={toggle} />
-      <p className="todo-item-text">{todo.title}</p>
-      <button disabled={!isRemoveAllowed} className="todo-remove" onClick={remove}>
-        X
-      </button>
+      <Checkbox checked={isChecked} onChange={toggle} />
+      <Text value={todo.title} className="todo-item-text" />
+      <FlatButton title="X" className="todo-remove" onClick={remove} disabled={!isRemoveAllowed} />
     </li>
   )
 }
