@@ -1,6 +1,5 @@
-import { createContext, PropsWithChildren, useEffect } from 'react'
+import { createContext, PropsWithChildren } from 'react'
 import { Todo } from '../types'
-import { saveToLocalStorage } from '../helpers/localeStorage.helper'
 import useStored from '../hooks/useStored.hook'
 
 interface ITodoContext {
@@ -14,11 +13,6 @@ export const TodoContext = createContext<ITodoContext | null>(null)
 
 export default function TodoProvider({ children }: PropsWithChildren) {
   const [todos, setTodos] = useStored<Todo[]>('todos', [])
-
-  useEffect(() => {
-    // Save current state of todos to localStorage whenever it is updated
-    saveToLocalStorage('todos', todos)
-  }, [todos])
 
   function addTodo(title: string) {
     const id = crypto.randomUUID()
